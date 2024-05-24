@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     // Создаем и сохраняем изображение
     createAndSaveImage($data);
+
+    // Вывод изображения
+    echo '<img src="pie_chart.png" alt="Bar Chart">';
 }
 
 // Функция для генерации случайных данных
@@ -90,7 +93,6 @@ function createAndSaveImage($data) {
     // Освобождаем память
     imagedestroy($image);
 }
-
 ?>
 
 <!-- Форма для кнопок -->
@@ -98,6 +100,3 @@ function createAndSaveImage($data) {
     <input type="submit" name="build" value="Построить">
     <input type="submit" name="read" value="Считать">
 </form>
-
-<!-- Выводим изображение -->
-<img src="pie_chart.png" alt="Pie Chart">
